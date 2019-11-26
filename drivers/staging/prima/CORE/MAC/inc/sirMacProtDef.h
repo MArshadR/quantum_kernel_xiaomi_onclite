@@ -458,13 +458,11 @@
 // When station sends Radio Management Cap.
 // State should be normal=1
 // Mbssid Mask should be 0
-#define RM_STATE_NORMAL             1 
+#define RM_STATE_NORMAL             1
 #endif
 
 #define SIR_MAC_OUI_VERSION_1         1
 
-/* OWE DH Parameter element https://tools.ietf.org/html/rfc8110 */
-#define SIR_DH_PARAMETER_ELEMENT_EXT_EID 32
 
 // OUI and type definition for WPA IE in network byte order
 #define SIR_MAC_WPA_OUI             0x01F25000
@@ -1103,11 +1101,10 @@ typedef __ani_attr_pre_packed struct sSirMacRateSet
     tANI_U8  rate[SIR_MAC_RATESET_EID_MAX];
 } __ani_attr_packed tSirMacRateSet;
 
-//Reserve 1 byte for NULL character in the SSID name field to print in %s
 typedef __ani_attr_pre_packed struct sSirMacSSid
 {
     tANI_U8        length;
-    tANI_U8        ssId[SIR_MAC_MAX_SSID_LENGTH + 1];
+    tANI_U8        ssId[32];
 } __ani_attr_packed tSirMacSSid;
 
 typedef __ani_attr_pre_packed struct sSirMacWpaInfo
